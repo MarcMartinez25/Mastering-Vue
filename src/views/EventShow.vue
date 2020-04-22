@@ -25,18 +25,12 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex';
-
 export default {
-    props: ['id'],
-    created() {
-        this.GetEvent(this.id);
-    },
-    computed: {
-        ...mapState({ event: state => state.event.event }),
-    },
-    methods: {
-        ...mapActions('event', ['GetEvent']),
+    props: {
+        event: {
+            type: Object,
+            required: true,
+        },
     },
 };
 </script>

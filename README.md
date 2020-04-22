@@ -2,6 +2,8 @@
 
 This is the progress I have made in [vuemaster.com](https://www.vuemastery.com/) so far.
 
+Currently I am working through Next-Level Vue and just finished adding the loading progress bar to the app.
+
 ## Project setup
 
 ```
