@@ -57,25 +57,17 @@ export const actions = {
                 dispatch('notification/Add', notification, { root: true });
             });
     },
-    GetEvent({ commit, getters, dispatch }, id) {
+    GetEvent({ commit, getters }, id) {
         var event = getters.GetEvent(id);
 
         if (event) {
             commit('SET_EVENT', event);
             return event;
         } else {
-            return EventService.getEvent(id)
-                .then(response => {
-                    commit('SET_EVENT', response.data);
-                    return response.data;
-                })
-                .catch(error => {
-                    const notification = {
-                        type: 'error',
-                        message: 'There was an issue: ' + error.message,
-                    };
-                    dispatch('notification/Add', notification, { root: true });
-                });
+            return EventService.getEvent(id).then(response => {
+                commit('SET_EVENT', response.data);
+                return response.data;
+            });
         }
     },
 };
