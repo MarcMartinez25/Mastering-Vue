@@ -5,6 +5,9 @@ import store from './store';
 import upperFirst from 'lodash/upperFirst';
 import camelCase from 'lodash/camelCase';
 import 'nprogress/nprogress.css';
+import Vuelidate from 'vuelidate';
+
+Vue.use(Vuelidate);
 
 // This searches the Components folder for vue files that start with 'Base'
 const requireComponent = require.context('./components', false, /Base[A-Z]\w+\.(vue|js)$/);
